@@ -42,9 +42,9 @@ if ( empty($_SESSION['SELECTOR']) ) {
         $ini_array = parse_ini_file($ini_file);     
         $_SESSION['SELECTOR'] = $ini_array['selector'];
     } elseif ( $_SESSION['V2'] == 'true' )  {
-        $_SESSION['SELECTOR'] = 'pets';
+        $_SESSION['SELECTOR'] = 'cities';
     } else {
-        $_SESSION['SELECTOR'] = 'pets';
+        $_SESSION['SELECTOR'] = 'cities';
     }
 
 }                                     
@@ -64,8 +64,8 @@ if ( !empty($service) ) {
     include('data/'.$_SESSION['SELECTOR'].'.php');
 } else {
     // Unsupported theme so default to pets
-    $_SESSION['SELECTOR'] = 'pets';
-    include('data/pets.php');
+    $_SESSION['SELECTOR'] = 'cities';
+    include('data/cities.php');
 }
 
 // Set up page next and prev
